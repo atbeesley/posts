@@ -21,11 +21,13 @@ export class PostsComponent implements OnInit {
   }
 
   createPost(input: HTMLInputElement){
-    let post = {
+    let post: any = {
       title: input.value
     };
+    input.value = '';
     this.http.post(this.url, JSON.stringify(post))
     .subscribe(response => {
+      this.posts.splice(0, 0, post)
       console.log(response);
     })
   }
