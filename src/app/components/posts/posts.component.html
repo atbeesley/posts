@@ -4,3 +4,6 @@
         {{post.title}}
     </li>
 </ul>
+<br>
+<p>Add a new post:</p>
+<input type="text" (keyup.enter)="createPost(title)" #title class="form-control">
